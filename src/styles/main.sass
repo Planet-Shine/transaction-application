@@ -40,8 +40,8 @@ html, body
 $disabled-color: rgba(240, 240, 240, 0.5)
 $theme-white: rgba(255, 255, 255, 0.87)
 $theme-red: rgba(255, 20, 20, 0.87)
-$theme-light-red: rgba(255, 20, 20, 0.3)
-$theme-medium-red: rgba(255, 20, 20, 0.5)
+$theme-light-red: rgba(255, 20, 20, 0.13)
+$theme-medium-red: rgba(255, 20, 20, 0.30)
 $theme-green: rgba(20, 255, 20, 0.87)
 $light: #dddddd
 $light-white: #eaeaea
@@ -231,7 +231,7 @@ h1
 
 .button
   outline: none
-  border: 1px solid $light
+  border: 1px solid $light-text-color
   border-radius: 2px
   background: $light-white
   font-size: 15px
@@ -266,7 +266,7 @@ h1
   padding: 0 10px
   outline: none
   border-radius: 2px
-  border: 1px solid $light
+  border: 1px solid $light-text-color
 
 .input-full
   width: 100%
@@ -387,7 +387,7 @@ h1
   border-bottom: 2px solid $gray
   font-weight: 500
   font-size: 20px
-  border-top: 3px solid $light-white
+  border-top: 1px solid $light
   border-right: 3px solid $light-white
   border-left: 3px solid $light-white
 .transaction-list__item-bank,

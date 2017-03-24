@@ -7,7 +7,7 @@ class AccountHeader extends Component {
         return (
             <div className="account-header" >
                 <span className="brand">
-                    ReactBank
+                    React Bank
                 </span>
                 {this.props.children}
             </div>
