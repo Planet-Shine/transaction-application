@@ -11,17 +11,17 @@ class AccountMenu extends Component {
     render() {
         
         return (
-            <div>
-                <Link to="/transactions">
-                    Список транзакций
+            <span className="account-menu">
+                <Link className="account-menu__item" to="/transactions">
+                    История<br/> переводов
                 </Link>
-                <Link to="/transactions/create">
-                    Создать транзакцию
+                <Link className="account-menu__item" to="/transactions/create">
+                    Новый<br/> перевод
                 </Link>
-                <a href="javascript:void(0);" onClick={this.props.onLogout}>
+                <a href="javascript:void(0);" className="account-menu__item" onClick={this.props.onLogout}>
                     Logout
                 </a>
-            </div>
+            </span>
         );
     }
 }

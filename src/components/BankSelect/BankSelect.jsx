@@ -11,14 +11,14 @@ class BankSelect extends Component {
     };
 
     render() {
-        var { options=[], value, onChange, disabled, name } = this.props;
+        var { options=[], value, onChange, disabled, name, className } = this.props;
         const emptyItem = {
             value: '',
             caption: "Банк не выбран"
         };
         options = [emptyItem, ...options];
         return (
-            <Select {...{disabled, options, value, name, onChange}} />
+            <Select {...{disabled, options, value, name, onChange, className}} />
         );
     }
 }

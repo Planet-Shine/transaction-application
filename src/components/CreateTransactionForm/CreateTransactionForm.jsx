@@ -76,12 +76,14 @@ class CreateTransactionForm extends Component {
         const resultAmount = formatPrice(amount);
 
         return (
-            <form className="login-form"
+            <form className="form transaction-form"
                   onSubmit={this.handleSubmit}
                   noValidate>
-                <div className="login-form__field">
+                <h1>Новый перевод</h1>
+                <div className="form__field">
                     <BankSelect ref="bankId"
                                 name="bankId"
+                                className="input-full"
                                 disabled={disabled}
                                 value={bankId}
                                 options={banks.list.map(({id, name}) => ({value: String(id), caption: name}))}
@@ -89,13 +91,14 @@ class CreateTransactionForm extends Component {
                             />
                     {
                         errorMap.bankId &&
-                        <div>
+                        <div  className="form__error">
                             {errorMap.bankId}
                         </div>
                     }
                 </div>
-                <div className="login-form__field">
+                <div className="form__field">
                     <input type="text"
+                           className="input input-full"
                            ref="amount"
                            onChange={this.handleTextFieldChange}
                            name="amount"
@@ -104,18 +107,26 @@ class CreateTransactionForm extends Component {
                            disabled={disabled} />
                     {
                         errorMap.amount &&
-                        <div>
+                        <div className="form__error">
                             {errorMap.amount}
                         </div>
                     }
                 </div>
-                <div>
+                <div className="form__field">
                     <span>{resultAmount ? resultAmount + ' $' : '—'}</span>
                     <span> в итоге к переводу</span>
                 </div>
+                <div className="form__actions">
+                    {
+                        <button className="button" disabled={disabled} >
+                            Перевести
+                        </button>
+                    }
+                    {disabled && <div className="form__preloader"></div>}
+                </div>
                 {
                     succeed &&
-                    <div>
+                    <div className="form__succeed">
                         Перевод выполнен
                     </div>
                 }
@@ -125,14 +136,6 @@ class CreateTransactionForm extends Component {
                         {error || formErrors[statusCode] || formErrors[httpStatusCodes.BadRequest]}
                     </div>
                 }
-                <div className="login-form__actions">
-                    {
-                        <button disabled={disabled} >
-                            перевести
-                        </button>
-                    }
-                    {disabled && <div className="form__preloader"></div>}
-                </div>
             </form>
         );
     }

@@ -39,21 +39,99 @@ html, body
 /* palette */
 $disabled-color: rgba(240, 240, 240, 0.5)
 $theme-white: rgba(255, 255, 255, 0.87)
-$light: #ededed
+$theme-red: rgba(255, 20, 20, 0.87)
+$theme-light-red: rgba(255, 20, 20, 0.3)
+$theme-medium-red: rgba(255, 20, 20, 0.5)
+$theme-green: rgba(20, 255, 20, 0.87)
+$light: #dddddd
+$light-white: #eaeaea
 $dark-text-color: rgba(0, 0, 0, 0.87)
 $medium-text-color: rgba(0, 0, 0, 0.7)
 $light-text-color: rgba(0, 0, 0, 0.54)
 $gray: rgba(0, 0, 0, 0.3)
 $light-gray: rgba(0, 0, 0, 0.15)
 
+/* fonts */
+@font-face
+  font-family: 'Roboto'
+  src: url('./fonts/roboto/roboto-bold-webfont.eot')
+  src: url('./fonts/roboto/roboto-bold-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('./fonts/roboto/roboto-bold-webfont.woff2') format('woff2')
+  src: url('./fonts/roboto/roboto-bold-webfont.woff') format('woff')
+  src: url('./fonts/roboto/roboto-bold-webfont.ttf') format('truetype')
+  src: url('./fonts/roboto/roboto-bold-webfont.svg#robotobold') format('svg')
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: 'Roboto'
+  src: url('./fonts/roboto/roboto-bolditalic-webfont.eot')
+  src: url('./fonts/roboto/roboto-bolditalic-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('./fonts/roboto/roboto-bolditalic-webfont.woff2') format('woff2')
+  src: url('./fonts/roboto/roboto-bolditalic-webfont.woff') format('woff')
+  src: url('./fonts/roboto/roboto-bolditalic-webfont.ttf') format('truetype')
+  src: url('./fonts/roboto/roboto-bolditalic-webfont.svg#robotobold_italic') format('svg')
+  font-weight: bold
+  font-style: italic
+
+@font-face
+  font-family: 'Roboto'
+  src: url('./fonts/roboto/roboto-italic-webfont.eot')
+  src: url('./fonts/roboto/roboto-italic-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('./fonts/roboto/roboto-italic-webfont.woff2') format('woff2')
+  src: url('./fonts/roboto/roboto-italic-webfont.woff') format('woff')
+  src: url('./fonts/roboto/roboto-italic-webfont.ttf') format('truetype')
+  src: url('./fonts/roboto/roboto-italic-webfont.svg#robotoitalic') format('svg')
+  font-weight: normal
+  font-style: italic
+
+@font-face
+  font-family: 'Roboto'
+  src: url('./fonts/roboto/roboto-regular-webfont.eot')
+  src: url('./fonts/roboto/roboto-regular-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('./fonts/roboto/roboto-regular-webfont.woff2') format('woff2')
+  src: url('./fonts/roboto/roboto-regular-webfont.woff') format('woff')
+  src: url('./fonts/roboto/roboto-regular-webfont.ttf') format('truetype')
+  src: url('./fonts/roboto/roboto-regular-webfont.svg#robotoregular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Roboto'
+  src: url('./fonts/roboto/roboto-medium-webfont.eot')
+  src: url('./fonts/roboto/roboto-medium-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('./fonts/roboto/roboto-medium-webfont.woff2') format('woff2')
+  src: url('./fonts/roboto/roboto-medium-webfont.woff') format('woff')
+  src: url('./fonts/roboto/roboto-medium-webfont.ttf') format('truetype')
+  src: url('./fonts/roboto/roboto-medium-webfont.svg#robotoregular') format('svg')
+  font-weight: 500
+  font-style: normal
+
+@font-face
+  font-family: 'Roboto'
+  src: url('./fonts/roboto/roboto-mediumitalic-webfont.eot')
+  src: url('./fonts/roboto/roboto-mediumitalic-webfont.eot?#iefix') format('embedded-opentype')
+  src: url('./fonts/roboto/roboto-mediumitalic-webfont.woff2') format('woff2')
+  src: url('./fonts/roboto/roboto-mediumitalic-webfont.woff') format('woff')
+  src: url('./fonts/roboto/roboto-mediumitalic-webfont.ttf') format('truetype')
+  src: url('./fonts/roboto/roboto-mediumitalic-webfont.svg#robotoregular') format('svg')
+  font-weight: 500
+  font-style: italic
+/* fonts ens */
+
 /* base */
 html, body
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
+  font-family: Roboto, Verdana, "Trebuchet MS", sans-serif
   background: $light
   color: $dark-text-color
 
 body
-  padding: 150px 25px 0 25px
+  padding: 0
+
+h1
+  font-size: 25px
+  font-weight: 500
+  padding-bottom: 5px
 
 /* components */
 
@@ -61,7 +139,6 @@ body
 .select
   position: relative
   display: inline-block
-  margin-left: 20px
 
 .select_opened
   .select__caption:after
@@ -84,6 +161,7 @@ body
 .select__button
   line-height: 30px
   min-width: 269px
+  width: 100%
   max-width: 100%
   text-align: left
   vertical-align: top
@@ -141,11 +219,59 @@ body
 /* select end */
 
 /* forms */
-.form
-  background: red
-
 .form__preloader
   background: blue
+
+.form__field
+  margin-bottom: 5px
+
+.form__actions
+  text-align: right
+  padding-right: 10px
+
+.button
+  outline: none
+  border: 1px solid $light
+  border-radius: 2px
+  background: $light-white
+  font-size: 15px
+  letter-spacing: 1px
+  padding: 3px 18px
+  cursor: pointer
+  &:hover
+    background: $light
+
+
+.button-danger
+  background: $theme-light-red
+  border-color: $theme-medium-red
+  color: $theme-red
+  &:hover
+    background: $theme-medium-red
+
+.form__error,
+.form__field-error
+  font-size: 13px
+  line-height: 20px
+  color: $theme-red
+
+.form__succeed
+  color: $theme-green
+
+/* input */
+.input
+  line-height: 35px
+  height: 35px
+  font-size: 14px
+  padding: 0 10px
+  outline: none
+  border-radius: 2px
+  border: 1px solid $light
+
+.input-full
+  width: 100%
+  box-sizing: border-box
+/* input end */
 
 /* forms end */
 
@@ -156,6 +282,132 @@ body
 
 /* card */
 
-
-
 /* card end */
+
+/* visitor layout */
+.card
+  background: $theme-white
+  border-radius: 2px
+  box-shadow: 0 1px 1px $gray
+  padding: 70px 20px
+
+.visitor-layout
+  margin: 20% auto
+  max-width: 400px
+/* visitor layout end */
+
+/* account layout */
+.account-layout
+  margin: 10px auto 100px
+  max-width: 900px
+
+.account-layout__content
+  padding-top: 50px
+  clear: both
+/* account layout */
+
+/* brand */
+.brand
+  font-size: 18px
+  font-weight: bold
+  padding: 0 10px
+  line-height: 60px
+/* brand end */
+
+/* account header */
+.account-header
+  margin-bottom: 10px
+  height: 50px
+.account-menu
+  margin-left: 20px
+  float: right
+.account-menu__item
+  display: inline-block
+  vertical-align: middle
+  margin-right: 10px
+  margin-bottom: 10px
+  line-height: 18px
+  font-size: 14px
+  padding: 4px 20px
+  color: $medium-text-color
+  border-radius: 5px
+  border: 1px solid $light-white
+  &:hover
+    background: $light-white
+/* end account header */
+
+/* form */
+
+
+/* form end */
+
+/* login-form */
+
+
+/* login-form end */
+
+/* transaction-form */
+
+.transaction-form
+  margin: 0 auto
+  max-width: 500px
+
+/* transaction-form end */
+
+/* user message */
+.user-message
+  padding: 15px
+  border-radius: 10px
+  border: 1px solid $light
+  margin-bottom: 20px
+/* user message end */
+
+
+/* transaction-list */
+.transaction-list
+  min-width: 360px
+.transaction-list__header,
+.transaction-list__item
+  display: block
+  position: relative
+  height: 40px
+  line-height: 40px
+.transaction-list__item
+  border-bottom: 1px solid $light
+  border-right: 3px solid $light-white
+  border-left: 3px solid $light-white
+  .transaction-list__item-bank,
+  .transaction-list__item-amount
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  &:hover
+    background: $light-white
+.transaction-list__header
+  border-bottom: 2px solid $gray
+  font-weight: 500
+  font-size: 20px
+  border-top: 3px solid $light-white
+  border-right: 3px solid $light-white
+  border-left: 3px solid $light-white
+.transaction-list__item-bank,
+.transaction-list__item-amount,
+.transaction-list__item-remove
+  position: absolute
+  display: inline-block
+  top: 0
+.transaction-list__item-bank
+  left: 0
+  width: 50%
+.transaction-list__item-amount
+  left: 50%
+  width: 20%
+.transaction-list__item-remove
+  text-align: right
+  left: 70%
+  width: 30%
+.cell
+  padding-left: 10px
+.right-cell
+  padding-right: 10px
+/* transaction-list end */

@@ -14,7 +14,7 @@ const errors = (state=defaultState, {type, payload}) => {
         case TRANSACTION_FORM:
             return [...payload.errors];
         case TRANSACTION_FORM_DELETE_ERRORS:
-            return state.filter(({name}) => name !== payload.filedName);
+            return state.filter(({name}) => name !== payload.fieldName);
         case ROUTER_STATE_CHANGE:
             return defaultState;
         default:

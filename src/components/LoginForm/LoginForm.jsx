@@ -61,12 +61,14 @@ class LoginForm extends Component {
         const { disabled, succeed, error, statusCode } = status;
         
         return (
-            <form className="login-form"
+            <form className="form login-form"
                   onSubmit={this.handleSubmit}
                   noValidate>
-                <div className="login-form__field">
+                <h1>Вход</h1>
+                <div className="form__field">
                     <input type="text"
                            ref="login"
+                           className="input input-full"
                            onChange={this.handleTextFieldChange}
                            name="login"
                            placeholder="логин"
@@ -74,14 +76,15 @@ class LoginForm extends Component {
                            disabled={disabled} />
                     {
                         errorMap.login &&
-                        <div>
+                        <div className="form__field-error">
                             {errorMap.login}
                         </div>
                     }
                 </div>
-                <div className="login-form__field">
+                <div className="form__field">
                     <input type="password"
                            ref="password"
+                           className="input input-full"
                            onChange={this.handleTextFieldChange}
                            name="password"
                            placeholder="пароль"
@@ -89,7 +92,7 @@ class LoginForm extends Component {
                            disabled={disabled} />
                     {
                         errorMap.password &&
-                        <div>
+                        <div className="form__field-error">
                             {errorMap.password}
                         </div>
                     }
@@ -107,11 +110,11 @@ class LoginForm extends Component {
                         {error || formErrors[statusCode] || formErrors[httpStatusCodes.BadRequest]}
                     </div>
                 }
-                <div className="login-form__actions">
+                <div className="form__actions">
                     {
                         !succeed &&
-                        <button disabled={disabled} >
-                            войти
+                        <button className="button" disabled={disabled} >
+                            Войти
                         </button>
                     }
                     {disabled && <div className="form__preloader"></div>}

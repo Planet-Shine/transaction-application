@@ -12,3 +12,4 @@ export TransactionList from './TransactionList/TransactionList';
 export AccountLayout from './AccountLayout/AccountLayout';
 export AccountMenu from './AccountMenu/AccountMenu';
 export NotFoundPage from './NotFoundPage/NotFoundPage';
+export AccountHeader from './AccountHeader/AccountHeader';

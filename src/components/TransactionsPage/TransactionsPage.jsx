@@ -7,7 +7,7 @@ class TransactionsPage extends Component  {
     render() {
         return (
             <div>
-                TransactionsPage
+                <h1>История переводов</h1>
                 <TransactionList />
             </div>
         );

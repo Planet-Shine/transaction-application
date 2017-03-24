@@ -55,7 +55,7 @@ class Select extends Component {
     }
 
     render() {
-        var { value: selectedValue, options=[], disabled } = this.props;
+        var { value: selectedValue, options=[], disabled, className } = this.props;
         const { opened } = this.state;
         options = options.map(option => {
             var {value, caption} = option;
@@ -71,6 +71,7 @@ class Select extends Component {
         return (
             <div className={classNames({
                     select: true,
+                    [className]: true,
                     select_opened: opened,
                     select_disabled: disabled
                 })}

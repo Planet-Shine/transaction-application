@@ -85,12 +85,12 @@ const api = {
         }, (response) => Promise.reject(response));
     },
     deleteTransaction(id) {
-        //if (!isAuthorised()) {
+        if (!isAuthorised()) {
             return Promise.reject({
                 entity: "User unauthorised",
                 status: {code: 401}
             });
-        //}
+        }
         return client({
             path: './data/ok.json',
             method: 'GET'

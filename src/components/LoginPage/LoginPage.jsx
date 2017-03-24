@@ -15,8 +15,8 @@ class LoginPage extends Component {
             <div className="card">
                 {
                     account.statusCode === statusCodes.Unauthorized &&
-                    <div>
-                        Вы не авторизованы. Операция не была произведена.
+                    <div className="user-message">
+                        —Вы не авторизованы. Операция не была произведена.
                         Возможно, вышло время жизни вашего ключа доступа.
                         Пожайлуста произведите аутентификацию, чтобы продолжить работу.
                     </div>
