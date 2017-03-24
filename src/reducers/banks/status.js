@@ -7,7 +7,7 @@ import {
 } from 'actions/bank';
 
 import {
-    LOGOUT
+    LOGOUT_SUCCEED
 } from 'actions/account';
 
 const defaultState = {
@@ -40,7 +40,7 @@ const status = (state=defaultState, {type, payload}) => {
                 error: payload.error,
                 pending: false
             };
-        case LOGOUT:
+        case LOGOUT_SUCCEED:
             return defaultState;
         default:
             return state;

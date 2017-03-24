@@ -42,7 +42,7 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <LoginPageComponent />
+            <LoginPageComponent account={this.props.account} />
         );
     }
 }

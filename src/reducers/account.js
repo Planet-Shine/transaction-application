@@ -5,13 +5,18 @@ import {
 } from 'actions/account';
 import cookies from 'browser-cookies';
 
+const defaultState = {
+    error: null,
+    statusCode: null
+};
+
 const getDefaultState = () => {
     const idToken = cookies.get('idToken');
-    const defaultState = {
+    return {
+        ...defaultState,
         idToken: idToken,
         loggedIn: !!idToken
     };
-    return defaultState;
 };
 
 const account = (state=getDefaultState(), {type, payload}) => {
@@ -20,10 +25,16 @@ const account = (state=getDefaultState(), {type, payload}) => {
             return {
                 ...state,
                 loggedIn: true,
-                idToken: payload.idToken
+                idToken: payload.idToken,
+                error: null,
+                statusCode: null
             };
         case LOGOUT:
-            return getDefaultState();
+            return {
+                ...getDefaultState(),
+                error: payload.error || null,
+                statusCode: payload.statusCode || null
+            };
         default:
             return state
     }

@@ -11,9 +11,6 @@ import {
 import {
     ROUTER_STATE_CHANGE
 } from 'actions/router';
-import {
-    LOGOUT
-} from 'actions/account';
 
 const defaultState = {
     login: '',

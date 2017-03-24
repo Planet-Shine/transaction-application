@@ -7,7 +7,7 @@ import {
 } from 'actions/transaction';
 
 import {
-    LOGOUT
+    LOGOUT_SUCCEED
 } from 'actions/account';
 
 import {
@@ -28,7 +28,7 @@ const list = (state=defaultState, {type, payload}) => {
             return defaultState;
         case CREATE_TRANSACTION_SUCCEED:
             return [...state, payload.transaction];
-        case LOGOUT:
+        case LOGOUT_SUCCEED:
             return defaultState;
         default:
             return state;

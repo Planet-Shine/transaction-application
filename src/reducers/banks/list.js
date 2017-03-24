@@ -6,7 +6,7 @@ import {
 } from 'actions/bank';
 
 import {
-    LOGOUT
+    LOGOUT_SUCCEED
 } from 'actions/account';
 
 const defaultState = [];
@@ -19,7 +19,7 @@ const list = (state=defaultState, {type, payload}) => {
             return [...payload.list];
         case LOAD_BANKS_FAILED:
             return defaultState;
-        case LOGOUT:
+        case LOGOUT_SUCCEED:
             return defaultState;
         default:
             return state;

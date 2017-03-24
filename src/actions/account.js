@@ -5,6 +5,7 @@ export const LOGIN_SUCCEED = 'LOGIN_SUCCEED';
 export const LOGIN_PENDING = 'LOGIN_PENDING';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
 export const LOGOUT = 'LOGOUT';
+export const LOGOUT_SUCCEED = 'LOGOUT_SUCCEED';
 
 export const loginPending = (name, password) => {
     return {
@@ -44,15 +45,23 @@ export const loginUser = (name, password) => {
     }
 };
 
-export const logout = () => {
+export const logout = (error, statusCode) => {
     return {
-        type: LOGOUT
+        type: LOGOUT,
+        payload: {error, statusCode}
     };
 };
 
-export const logoutUser = () => {
+export const logoutSucceed = (error, statusCode) => {
+    return {
+        type: LOGOUT_SUCCEED
+    };
+};
+
+
+export const logoutUser = (error, statusCode) => {
     return dispatch => {
         api.logout();
-        dispatch(logout());
+        dispatch(logout(error, statusCode));
     };
 };

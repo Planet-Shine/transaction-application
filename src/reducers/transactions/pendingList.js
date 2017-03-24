@@ -6,7 +6,7 @@ import {
 } from 'actions/transaction';
 
 import {
-    LOGOUT
+    LOGOUT_SUCCEED
 } from 'actions/account';
 
 const defaultState = [];
@@ -18,7 +18,7 @@ const pendingList = (state=defaultState, {type, payload}) => {
         case DELETE_TRANSACTION_SUCCEED:
             return state.filter(({id}) => id !== payload.id);
         case LOAD_TRANSACTIONS_SUCCEED:
-        case LOGOUT:
+        case LOGOUT_SUCCEED:
             return defaultState;
         default:
             return state;

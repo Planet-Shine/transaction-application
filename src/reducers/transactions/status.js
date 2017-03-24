@@ -6,7 +6,7 @@ import {
 } from 'actions/transaction';
 
 import {
-    LOGOUT
+    LOGOUT_SUCCEED
 } from 'actions/account';
 
 const defaultState = {
@@ -39,7 +39,7 @@ const status = (state=defaultState, { type, payload }) => {
                 statusCode: payload.statusCode,
                 error: payload.error
             };
-        case LOGOUT:
+        case LOGOUT_SUCCEED:
             return defaultState;
         default:
             return state;

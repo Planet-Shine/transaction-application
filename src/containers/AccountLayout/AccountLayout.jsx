@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { AccountLayout as AccountLayoutComponent } from 'components';
+import { logoutSucceed } from 'actions/account';
 
 const mapStateToProps = ({account}) => {
     return {
@@ -31,9 +32,10 @@ class AccountLayout extends Component {
     }
 
     redirectToLoginIfNeeded(props) {
-        const { account : { loggedIn } } = props;
+        const { dispatch, account : { loggedIn } } = props;
         if (!loggedIn) {
             this.context.router.replace('/login');
+            dispatch(logoutSucceed());
         }
     }
 
