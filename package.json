@@ -14,6 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "array.prototype.find": "^2.0.3",
+    "bluebird": "^3.5.0",
+    "browser-cookies": "^1.1.0",
     "classnames": "^2.2.5",
     "es6-promise": "^4.1.0",
     "keymirror": "^0.1.1",

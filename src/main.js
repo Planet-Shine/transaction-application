@@ -9,14 +9,20 @@ import produceStore from 'store';
 import getRoutes from 'routes';
 import { Router, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import './styles/base.sass';
+
+import { routerStateChange } from 'actions/router';
+
+import './styles/main.sass';
 
 const store = produceStore();
 
 function renderApp() {
     ReactDOM.render(
-        <Provider store={store} key="provider">
-            <Router history={hashHistory}>
+        <Provider store={store} key="provider"> 
+            <Router history={hashHistory}
+                    onUpdate={function() {
+                        store.dispatch(routerStateChange({state: this.state}));
+                    }}>
                 {getRoutes(store)}
             </Router>
         </Provider>,

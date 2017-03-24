@@ -18,7 +18,7 @@ module.exports = function (env) {
         },
         output: {
             path: path.resolve(__dirname, './public'),
-            filename: '[name].bundle.js'
+            filename: 'main.js'
         },
         resolve: {
             modules: [
