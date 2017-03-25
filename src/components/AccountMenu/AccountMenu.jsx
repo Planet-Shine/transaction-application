@@ -16,7 +16,7 @@ class AccountMenu extends Component {
                     История<br/> переводов
                 </Link>
                 <Link className="account-menu__item" to="/transactions/create">
-                    Новый<br/> перевод
+                    Перевод<br/> средств
                 </Link>
                 <a href="javascript:void(0);" className="account-menu__item" onClick={this.props.onLogout}>
                     Logout

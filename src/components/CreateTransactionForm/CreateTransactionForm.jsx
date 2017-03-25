@@ -78,7 +78,7 @@ class CreateTransactionForm extends Component {
             <form className="form transaction-form"
                   onSubmit={this.handleSubmit}
                   noValidate>
-                <h1>Новый перевод</h1>
+                <h1>Перевод средств</h1>
                 <div className="form__field">
                     <BankSelect ref="bankId"
                                 name="bankId"
