@@ -392,4 +392,40 @@ h1
   height: 32px
   margin-right: 20px
 // preloader end
+
+// tiny-info
+.tiny-info
+  position: relative
+  margin-left: 10px
+  padding-left: 14px
+  line-height: 15px
+  font-size: 11px
+  font-weight: bold
+  color: $theme-white
+  background: $light-gray
+  border-radius: 7px
+  &.info_opened,
+  &:hover
+    .tiny-info__hint
+      display: block
+  &:before
+    position: absolute
+    display: block
+    content: 'i'
+    top: -1px
+    left: 5px
+  .tiny-info__hint
+    position: absolute
+    background: $theme-white
+    font-size: 13px
+    font-weight: 500
+    padding: 5px
+    border-radius: 2px
+    box-shadow: 0 1px 1px $light-gray
+    width: 200px
+    bottom: 0
+    left: 0
+    color: $medium-text-color
+    display: none
+// tiny-info end
 // components end

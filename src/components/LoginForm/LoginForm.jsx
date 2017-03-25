@@ -1,5 +1,6 @@
 
 import React, { Component, PropTypes } from 'react';
+import {TinyInfo} from 'components';
 
 import httpStatusCodes from 'defs/httpStatusCodes';
 
@@ -64,7 +65,15 @@ class LoginForm extends Component {
             <form className="form login-form"
                   onSubmit={this.handleSubmit}
                   noValidate>
-                <h1>Вход</h1>
+                <h1>Вход
+                    <TinyInfo>
+                        Используйте следующие логины и
+                        пароли для авторизации: <br/>
+                        Ivan — Ivanpass<br/>
+                        admin — adminpass<br/>
+                        user — userpass
+                    </TinyInfo>
+                </h1>
                 <div className="form__field">
                     <input type="text"
                            ref="login"
