@@ -14,7 +14,8 @@ const errorMessages = {
 };
 
 const formErrors = {
-    [httpStatusCodes.BadRequest]: `Авторизация неудачна. Проверьте, что все поля введены правильно.`
+    [httpStatusCodes.BadRequest]: `Авторизация неудачна. Проверьте, что все поля введены правильно.`,
+    [httpStatusCodes.Unauthorized]: `Неверная пара: логин и пароль.`
 };
 
 class LoginForm extends Component {
@@ -106,6 +107,15 @@ class LoginForm extends Component {
                         </div>
                     }
                 </div>
+                <div className="form__actions">
+                    {disabled && <div className="preloader"></div>}
+                    {
+                        !succeed &&
+                        <button className="button" disabled={disabled} >
+                            Войти
+                        </button>
+                    }
+                </div>
                 {
                     succeed &&
                     <div className="form__succeed">
@@ -116,18 +126,9 @@ class LoginForm extends Component {
                 {
                     error &&
                     <div className="form__error">
-                        {error || formErrors[statusCode] || formErrors[httpStatusCodes.BadRequest]}
+                        {formErrors[statusCode] || error  || formErrors[httpStatusCodes.BadRequest]}
                     </div>
                 }
-                <div className="form__actions">
-                    {disabled && <div className="preloader"></div>}
-                    {
-                        !succeed &&
-                        <button className="button" disabled={disabled} >
-                            Войти
-                        </button>
-                    }
-                </div>
             </form>
         );
     }

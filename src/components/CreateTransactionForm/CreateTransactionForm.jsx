@@ -132,7 +132,7 @@ class CreateTransactionForm extends Component {
                 {
                     error &&
                     <div>
-                        {error || formErrors[statusCode] || formErrors[httpStatusCodes.BadRequest]}
+                        {formErrors[statusCode] || error  || formErrors[httpStatusCodes.BadRequest]}
                     </div>
                 }
             </form>
