@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { CreateTransactionForm as CreateTransactionFormComponent } from 'components';
 import { connect } from 'react-redux';
 
-import { filledStringReg, floatReg } from 'utils/validation';
+import { filledStringReg, floatReg, parsePrice } from 'utils/validation';
 import { transactionForm, deleteErrors, changeField } from 'actions/transactionForm';
 import { createTransaction } from 'actions/transaction';
 import { loadBanks } from 'actions/bank';
@@ -78,7 +78,7 @@ class CreateTransactionForm extends Component {
         }
         const { dispatch } = this.props;
         if (!errors.length) {
-            dispatch(createTransaction(parseInt(bankId, 10), parseInt(amount, 10)));
+            dispatch(createTransaction(parseInt(bankId, 10), parsePrice(amount)));
         }
         dispatch(transactionForm(fields, errors));
     }

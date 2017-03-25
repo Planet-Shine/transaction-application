@@ -23,7 +23,9 @@ export default (store) => {
                 <Route name="createTransaction" path='/transactions/create' component={CreateTransactionPage} />
                 <Route name="transactions" path='/transactions' component={TransactionsPage} />
             </Route>
-            <Route name="notFound" path='*' component={NotFoundPage} />
+            <Route component={VisitorLayout}>
+                <Route name="notFound" path='*' component={NotFoundPage} />
+            </Route>
         </Route>
     );
 

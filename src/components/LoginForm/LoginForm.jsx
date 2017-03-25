@@ -111,13 +111,13 @@ class LoginForm extends Component {
                     </div>
                 }
                 <div className="form__actions">
+                    {disabled && <div className="preloader"></div>}
                     {
                         !succeed &&
                         <button className="button" disabled={disabled} >
                             Войти
                         </button>
                     }
-                    {disabled && <div className="form__preloader"></div>}
                 </div>
             </form>
         );

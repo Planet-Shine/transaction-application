@@ -117,12 +117,12 @@ class CreateTransactionForm extends Component {
                     <span> в итоге к переводу</span>
                 </div>
                 <div className="form__actions">
+                    {disabled && <div className="preloader"></div>}
                     {
                         <button className="button" disabled={disabled} >
                             Перевести
                         </button>
                     }
-                    {disabled && <div className="form__preloader"></div>}
                 </div>
                 {
                     succeed &&

@@ -30,51 +30,66 @@ module.exports = function (env) {
         module: {
             rules: [
                 {
+                    oneOf: [
+                        {
+                            test: /\.gif$/,
+                            use: {
+                                loader: 'url-loader',
+                                query: {
+                                    limit: '10000',
+                                    mimetype: 'image/gif'
+                                }
+                            }
+                        },
+                        {
+                            test: /\.jpe?g$/,
+                            use: {
+                                loader: 'url-loader',
+                                query: {
+                                    limit: '10000',
+                                    mimetype: 'image/jpg'
+                                }
+                            }
+                        },
+                        {
+                            test: /\.png$/,
+                            use: {
+                                loader: 'url-loader',
+                                query: {
+                                    limit: '10000',
+                                    mimetype: 'image/png'
+                                }
+                            }
+                        },
+                        {
+                            test: /\.svg$/,
+                            exclude: /font\.svg$/i,
+                            use: {
+                                loader: 'url-loader',
+                                query: {
+                                    limit: '10000',
+                                    mimetype: 'image/svg+xml'
+                                }
+                            }
+                        },
+                        {
+                            test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/i,
+                            exclude: /font\.(woff|woff2|eot|ttf|svg)$/i,
+                            use: {
+                                loader: 'file-loader',
+                                query: {
+                                    name: '[path][name].[ext]'
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
                     test: /\.js$/,
                     exclude: [/node_modules/, /public/],
                     use: [
                         'babel-loader'
                     ]
-                },
-                {
-                    test: /\.gif$/,
-                    use: {
-                        loader: 'url-loader',
-                        query: {
-                            limit: '10000',
-                            mimetype: 'image/gif'
-                        }
-                    }
-                },
-                {
-                    test: /\.jpg$/,
-                    use: {
-                        loader: 'url-loader',
-                        query: {
-                            limit: '10000',
-                            mimetype: 'image/jpg'
-                        }
-                    }
-                },
-                {
-                    test: /\.png$/,
-                    use: {
-                        loader: 'url-loader',
-                        query: {
-                            limit: '10000',
-                            mimetype: 'image/png$'
-                        }
-                    }
-                },
-                {
-                    test: /\.svg$/,
-                    use: {
-                        loader: 'url-loader',
-                        query: {
-                            limit: '10000',
-                            mimetype: 'image/svg+xml'
-                        }
-                    }
                 },
                 {
                     test: /\.jsx$/,

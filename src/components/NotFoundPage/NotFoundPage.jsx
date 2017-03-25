@@ -6,9 +6,12 @@ class NotFoundPage extends Component {
 
     render() {
         return (
-            <div>
-                Страница не найдена.
-                <Link to="/login">Домашняя страница</Link>
+            <div className="card">
+                <div className="user-message">
+                    —Страница не найдена.<br />
+                    Вы можете перейти на<br />
+                    <Link className="link" to="/login">Домашнюю страницу</Link>
+                </div>
             </div>
         );
     }
