@@ -7,7 +7,7 @@ class NotFoundPage extends Component {
     render() {
         return (
             <div className="card">
-                <div className="user-message">
+                <div className="notify-message">
                     —Страница не найдена.<br />
                     Вы можете перейти на<br />
                     <Link className="link" to="/login">Домашнюю страницу</Link>

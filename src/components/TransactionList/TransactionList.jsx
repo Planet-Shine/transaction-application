@@ -56,7 +56,7 @@ class TransactionList extends Component {
                     </ul>
                 }
                 {!transactions.list.length &&
-                    <div className="user-message">
+                    <div className="notify-message">
                         —Нет ни одного перевода.
                     </div>
                 }

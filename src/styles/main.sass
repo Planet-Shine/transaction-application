@@ -1,42 +1,6 @@
 
-/* CSS reset */
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
-form, fieldset, input, p, blockquote, table, th, td, embed, object
-  padding: 0
-  margin: 0
-table
-  border-collapse: collapse
-  border-spacing: 0
-fieldset, img, abbr
-  border: 0
-
-address, caption, cite, code, dfn, em,
-h1, h2, h3, h4, h5, h6, strong, th, var
-  font-weight: normal
-  font-style: normal
-
-ul
-  list-style: none
-
-caption, th
-  text-align: left
-
-h1, h2, h3, h4, h5, h6
-  font-size: 1.0em
-
-q:before, q:after
-  content: ''
-
-a, ins
-  text-decoration: none
-
-html, body
-  padding: 0
-  margin: 0
-  font-family: Arial, Verdana, Trebuchet
-
-/* defines */
-/* palette */
+// defines
+// palette
 $disabled-color: rgba(240, 240, 240, 0.5)
 $theme-white: rgba(255, 255, 255, 0.87)
 $theme-red: rgba(255, 20, 20, 0.87)
@@ -51,8 +15,39 @@ $medium-text-color: rgba(0, 0, 0, 0.7)
 $light-text-color: rgba(0, 0, 0, 0.54)
 $gray: rgba(0, 0, 0, 0.3)
 $light-gray: rgba(0, 0, 0, 0.15)
+// palette end
+// defines end
 
-/* fonts */
+// CSS reset
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, p, blockquote, table, th, td, embed, object
+  padding: 0
+  margin: 0
+table
+  border-collapse: collapse
+  border-spacing: 0
+fieldset, img, abbr
+  border: 0
+address, caption, cite, code, dfn, em,
+h1, h2, h3, h4, h5, h6, strong, th, var
+  font-weight: normal
+  font-style: normal
+ul
+  list-style: none
+caption, th
+  text-align: left
+h1, h2, h3, h4, h5, h6
+  font-size: 1.0em
+q:before, q:after
+  content: ''
+a, ins
+  text-decoration: none
+html, body
+  padding: 0
+  margin: 0
+// CSS reset end
+
+// fonts
 @font-face
   font-family: 'Roboto'
   src: url('./fonts/roboto/roboto-bold-webfont.eot')
@@ -118,9 +113,9 @@ $light-gray: rgba(0, 0, 0, 0.15)
   src: url('./fonts/roboto/roboto-mediumitalic-webfont.svg#robotoregular') format('svg')
   font-weight: 500
   font-style: italic
-/* fonts ens */
+// fonts end
 
-/* base */
+// base
 html, body
   font-family: Roboto, Verdana, "Trebuchet MS", sans-serif
   background: $light
@@ -133,20 +128,18 @@ h1
   font-size: 25px
   font-weight: 500
   padding-bottom: 5px
+// base end
 
-/* components */
-
-/* select */
+// components
+// select
 .select
   position: relative
   display: inline-block
-
 .select_opened
   .select__caption:after
     transform: rotate(180deg)
   .select__button
     border-radius: 2px 2px 0 0
-
 .select_disabled
   &:after
     position: absolute
@@ -157,8 +150,6 @@ h1
     right: 0
     bottom: 0
     background: $disabled-color
-
-
 .select__button
   line-height: 30px
   min-width: 269px
@@ -179,7 +170,6 @@ h1
   background: $theme-white
   border: 1px solid $light-text-color
   outline: none
-
 .select__caption
   position: relative
   display: block
@@ -194,7 +184,6 @@ h1
     content: ''
     background: url(./images/opened-status-arrow.svg) 0 0 no-repeat
     transition: transform .1s ease-out
-
 .select__list
   position: absolute
   list-style: none
@@ -206,30 +195,32 @@ h1
   border-radius: 0 0 2px 2px
   box-shadow: 0 2px 3px $gray
   overflow-y: auto
-
 .select__list-item
   cursor: pointer
   line-height: 18px
   padding: 10px
   &:hover
     background: $light-gray
-
 .select__list-item_selected
   background: $light-gray
+// select end
 
-/* select end */
-
-/* forms */
-.form__preloader
-  background: blue
-
+// form
 .form__field
   margin-bottom: 5px
-
 .form__actions
   text-align: right
   padding-right: 10px
+.form__error,
+.form__field-error
+  font-size: 13px
+  line-height: 20px
+  color: $theme-red
+.form__succeed
+  color: $theme-green
+// form end
 
+// button
 .button
   outline: none
   border: 1px solid $light-text-color
@@ -241,25 +232,15 @@ h1
   cursor: pointer
   &:hover
     background: $light
-
-
 .button-danger
   background: $theme-light-red
   border-color: $theme-medium-red
   color: $theme-red
   &:hover
     background: $theme-medium-red
+// button end
 
-.form__error,
-.form__field-error
-  font-size: 13px
-  line-height: 20px
-  color: $theme-red
-
-.form__succeed
-  color: $theme-green
-
-/* input */
+// input
 .input
   line-height: 35px
   height: 35px
@@ -268,54 +249,48 @@ h1
   outline: none
   border-radius: 2px
   border: 1px solid $light-text-color
-
 .input-full
   width: 100%
   box-sizing: border-box
-/* input end */
+// input end
 
-/* forms end */
-
-/* link */
+// link
 .link_active
   color: black
-/* link end */
+// link end
 
-/* card */
-
-/* card end */
-
-/* visitor layout */
+// card
 .card
   background: $theme-white
   border-radius: 2px
   box-shadow: 0 1px 1px $gray
   padding: 70px 20px
+// card end
 
+// visitor layout
 .visitor-layout
   margin: 20% auto
   max-width: 400px
-/* visitor layout end */
+// visitor layout end
 
-/* account layout */
+// account layout
 .account-layout
   margin: 10px auto 100px
   max-width: 900px
-
 .account-layout__content
   padding-top: 50px
   clear: both
-/* account layout */
+// account layout end
 
-/* brand */
+// brand
 .brand
   font-size: 18px
   font-weight: bold
   padding: 0 10px
   line-height: 60px
-/* brand end */
+// brand end
 
-/* account header */
+// account header
 .account-header
   margin-bottom: 10px
   height: 50px
@@ -335,28 +310,24 @@ h1
   border: 1px solid $light-white
   &:hover
     background: $light-white
-/* end account header */
+// account header end
 
-
-/* transaction-form */
-
+// transaction-form
 .transaction-form
   margin: 0 auto
   max-width: 500px
+// transaction-form end
 
-/* transaction-form end */
-
-/* user message */
-.user-message
+// notify message
+.notify-message
   padding: 15px
   border-radius: 10px
   border: 1px solid $light
   margin-bottom: 20px
   line-height: 1.4em
-/* user message end */
+// notify message end
 
-
-/* transaction-list */
+// transaction-list
 .transaction-list
   min-width: 360px
 .transaction-list__header,
@@ -403,16 +374,16 @@ h1
   padding-left: 10px
 .right-cell
   padding-right: 10px
-/* transaction-list end */
+// transaction-list end
 
-/* link */
+// link
 .link
   color: $theme-blue
   &:hover
     text-decoration: underline
-/* end link */
+// link end
 
-/* preloader */
+// preloader
 .preloader
   display: inline-block
   vertical-align: top
@@ -420,4 +391,5 @@ h1
   width: 32px
   height: 32px
   margin-right: 20px
-/* end preloader */
+// preloader end
+// components end

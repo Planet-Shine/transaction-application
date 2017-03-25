@@ -1,7 +1,7 @@
 
-// import arrayPrototypeFind from 'array.prototype.find';
-// arrayPrototypeFind.shim(); // Ставим полифил find для ie9.
-// import 'es6-promise/auto'; // Ставим полифил Promise для ie9.
+import arrayPrototypeFind from 'array.prototype.find';
+arrayPrototypeFind.shim(); // Ставим полифил find для ie9.
+import 'es6-promise/auto'; // Ставим полифил Promise для ie9.
 
 import React from 'react';
 import ReactDOM from 'react-dom';
