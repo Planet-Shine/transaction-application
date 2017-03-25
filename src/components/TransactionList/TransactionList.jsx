@@ -55,7 +55,7 @@ class TransactionList extends Component {
                         }
                     </ul>
                 }
-                {!transactions.list.length &&
+                {!transactions.list.length && transactions.status.loaded &&
                     <div className="notify-message">
                         —Нет ни одного перевода.
                     </div>

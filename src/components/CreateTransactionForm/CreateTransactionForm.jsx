@@ -30,7 +30,6 @@ class CreateTransactionForm extends Component {
             bankId: PropTypes.string,
             amount: PropTypes.string
         }),
-        banks: PropTypes.array,
         errors: PropTypes.array,
         status: PropTypes.object,
         banks: PropTypes.object

@@ -79,10 +79,10 @@ const api = {
         return client({
             path: './data/ok.json',
             method: 'GET'
-        }).then((response) => {
+        }).then(response => {
             response.entity.transactions = transactionStore.getAll();
             return Promise.resolve(response);
-        }, (response) => Promise.reject(response));
+        }, response => Promise.reject(response));
     },
     deleteTransaction(id) {
         if (!isAuthorised()) {
