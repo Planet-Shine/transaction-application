@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { LoginPage as LoginPageComponent } from 'components';
 import { connect } from 'react-redux';
+import {push} from 'react-router-redux';
 
 const mapStateToProps = ({ account }) => {
     return {
@@ -30,13 +31,13 @@ class LoginPage extends Component {
     }
 
     redirectLoggedInUser() {
-        const { location } = this.props;
+        const { location, dispatch } = this.props;
         if (location.state && location.state.nextPathname) {
             let nextPathname = location.state.nextPathname;
             delete location.state.nextPathname;
-            this.context.router.replace(nextPathname);
+            dispatch(push(nextPathname));
         } else {
-            this.context.router.replace('/transactions/create');
+            dispatch(push('/transactions/create'));
         }
     }
 

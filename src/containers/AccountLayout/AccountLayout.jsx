@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 import { AccountLayout as AccountLayoutComponent } from 'components';
 import { logoutSucceed } from 'actions/account';
+import { push } from 'react-router-redux';
 
 const mapStateToProps = ({account}) => {
     return {
@@ -34,7 +35,7 @@ class AccountLayout extends Component {
     redirectToLoginIfNeeded(props) {
         const { dispatch, account : { loggedIn } } = props;
         if (!loggedIn) {
-            this.context.router.replace('/login');
+            dispatch(push('/login'));
             dispatch(logoutSucceed());
         }
     }
